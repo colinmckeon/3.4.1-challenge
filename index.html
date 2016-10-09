@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>3.4.1-challenge</title>
+  </head>
+  <body>
+
+
+<h1>3.4.1-challenge</h1>
+
+<!--The fist cosole.assert is coming back as undefined because var name in var name = "Jane"; is being
+hoisted and there is no value for name. The second assert passed "Jane" because var name = "Jane"; has
+been declared and passes as true within the function.  The third console.assert works because var name = "John";
+has been declared globally and passes as true. My desciption is probably going to sound off, but I can hopefully
+explain it better in person if you would like -->
+<script type="text/javascript">
+
+var name = "John";
+
+(function() {
+    console.assert(name === undefined); // 1
+
+    var name = "Jane";
+
+    console.assert(name === "Jane"); // 2
+})()
+
+console.assert(name === "John"); // 3
+
+
+</script>
+
+
+
+
+  </body>
+</html>
